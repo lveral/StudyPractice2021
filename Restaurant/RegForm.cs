@@ -66,7 +66,7 @@ namespace Restaurant
             }
             /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
             SQLClass.Insert_visitor(textBoxLogin.Text, textBoxPassword.Text, textBoxFirstN.Text, 
-                textBoxMiddleN.Text, textBoxLastN.Text, textBoxPhone.Text);
+                textBoxMiddleN.Text, textBoxLastN.Text, textBoxPhone.Text, Program.Role);
             Program.ID = SQLClass.Select_ID(textBoxLogin.Text);
             /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
             Hide();

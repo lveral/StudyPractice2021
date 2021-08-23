@@ -51,7 +51,7 @@ namespace Restaurant
         {
             string dateFrom = datePickerFrom.Value.ToString("yyyy-MM-dd");
             string dateTo = datePickerTo.Value.ToString("yyyy-MM-dd");
-            //////////////////////////////////////////////////////////////////////////////////////
+            ////////////////////////////////////////////////////////////////////////////////////
             dataGridTables.DataSource = SQLClass.Select_reservation(dateFrom, dateTo);
             //////////////////////////////////////////////////////////////////////////////////
             dataGridTables.Columns[0].Visible = false;

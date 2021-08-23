@@ -41,7 +41,7 @@ namespace Restaurant
             reader.Close();
             cmd.Dispose();
         }
-        public static void Insert_visitor(string login, string password, string f_name, string m_name, string l_name, string phone)
+        public static void Insert_visitor(string login, string password, string f_name, string m_name, string l_name, string phone, string role)
         {
             SQLClass.Query("insert into visitors(login, password, f_name, m_name, l_name, phone, role) values( '" +
                 login + "', '" +
@@ -50,7 +50,7 @@ namespace Restaurant
                 m_name + "', '" +
                 l_name + "', '" +
                 phone + "', '" +
-                Program.Role + "')");
+                role + "')");
         }
         public static List<string> Select_visitor()
         {

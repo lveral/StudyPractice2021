@@ -27,7 +27,7 @@ namespace Restaurant
             string login = LoginBox.Text;
             string password = PasswordBox.Text;
             ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-            string existUser = SQLClass.Exist_User(login);
+            string existUser = 
             string existUserWithPass = SQLClass.Exist_UserWithPass(login, password);
             /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
             
@@ -44,8 +44,8 @@ namespace Restaurant
             else
             {
                 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
-                Program.ID = SQLClass.Select_ID(login);
-                Program.Role = SQLClass.Select_Role(login);
+                Program.ID = Program.client.Select_ID(login);
+                Program.Role = Program.client.Select_Role(login);
                 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
                 Hide();
                 new AdminForm().ShowDialog();

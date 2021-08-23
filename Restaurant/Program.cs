@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Restaurant.ServiceReference;
 
 namespace Restaurant
 {
@@ -24,8 +25,10 @@ namespace Restaurant
             Application.Run(new AuthoForm());
 
             SQLClass.con.Close();
+            client.Close();
         }
         public static string ID;
         public static string Role;
+        public static Service1Client client = new Service1Client();
     }
 }
