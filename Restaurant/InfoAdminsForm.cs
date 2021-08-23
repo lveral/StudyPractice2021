@@ -27,7 +27,7 @@ namespace Restaurant
         private void InfoAdminsForm_Load(object sender, EventArgs e)
         {
             /////////////////////////////////////////////////////////////////////////////////
-            dataGridTables.DataSource = Program.client.Se
+            dataGridTables.DataSource = Program.client.Select_admins();
             /////////////////////////////////////////////////////////////////////////////////
             dataGridTables.Columns[0].Visible = false;
             dataGridTables.Columns[1].ReadOnly = true;
@@ -44,14 +44,14 @@ namespace Restaurant
 
         private void buttonDelete_Click(object sender, EventArgs e)
         {
-            DialogResult dialogResult = MessageBox.Show("Исключить из администраторов? Пользователь больше не будет иметь доступ к возможностям администратора.", "Исключение из администраторов", MessageBoxButtons.YesNo);
+            DialogResult dialogResult = MessageBox.Show("Пользователь больше не будет иметь доступ к возможностям администратора.", "Исключение из администраторов", MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)
             {
                 int index = dataGridTables.SelectedCells[0].RowIndex;
                 string id = dataGridTables.Rows[index].Cells[0].Value.ToString();
                 dataGridTables.Rows.RemoveAt(index);
                 ////////////////////////////////////////////////////
-                SQLClass.Update_admin(id);
+                Program.client.Update_admin(id);
                 ////////////////////////////////////////////////////
                 if (id == Program.ID)
                 {

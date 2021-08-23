@@ -5,6 +5,7 @@
       <xsd:import schemaLocation="http://localhost:53409/Service1.svc?xsd=xsd0" namespace="http://tempuri.org/" />
       <xsd:import schemaLocation="http://localhost:53409/Service1.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
       <xsd:import schemaLocation="http://localhost:53409/Service1.svc?xsd=xsd2" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="http://localhost:53409/Service1.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/System.Data" />
     </xsd:schema>
   </wsdl:types>
   <wsdl:message name="IService1_Select_ID_InputMessage">
@@ -49,6 +50,66 @@
   <wsdl:message name="IService1_Delete_visitor_OutputMessage">
     <wsdl:part name="parameters" element="tns:Delete_visitorResponse" />
   </wsdl:message>
+  <wsdl:message name="IService1_Select_admins_InputMessage">
+    <wsdl:part name="parameters" element="tns:Select_admins" />
+  </wsdl:message>
+  <wsdl:message name="IService1_Select_admins_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Select_adminsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_Update_admin_InputMessage">
+    <wsdl:part name="parameters" element="tns:Update_admin" />
+  </wsdl:message>
+  <wsdl:message name="IService1_Update_admin_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Update_adminResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_Insert_visitor_InputMessage">
+    <wsdl:part name="parameters" element="tns:Insert_visitor" />
+  </wsdl:message>
+  <wsdl:message name="IService1_Insert_visitor_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Insert_visitorResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_Select_reservation_InputMessage">
+    <wsdl:part name="parameters" element="tns:Select_reservation" />
+  </wsdl:message>
+  <wsdl:message name="IService1_Select_reservation_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Select_reservationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_Update_reservation_InputMessage">
+    <wsdl:part name="parameters" element="tns:Update_reservation" />
+  </wsdl:message>
+  <wsdl:message name="IService1_Update_reservation_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Update_reservationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_Delete_reservation_InputMessage">
+    <wsdl:part name="parameters" element="tns:Delete_reservation" />
+  </wsdl:message>
+  <wsdl:message name="IService1_Delete_reservation_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Delete_reservationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_Insert_reservation_InputMessage">
+    <wsdl:part name="parameters" element="tns:Insert_reservation" />
+  </wsdl:message>
+  <wsdl:message name="IService1_Insert_reservation_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Insert_reservationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_Select_free_tables_InputMessage">
+    <wsdl:part name="parameters" element="tns:Select_free_tables" />
+  </wsdl:message>
+  <wsdl:message name="IService1_Select_free_tables_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Select_free_tablesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_Select_tables_InputMessage">
+    <wsdl:part name="parameters" element="tns:Select_tables" />
+  </wsdl:message>
+  <wsdl:message name="IService1_Select_tables_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Select_tablesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_Delete_table_InputMessage">
+    <wsdl:part name="parameters" element="tns:Delete_table" />
+  </wsdl:message>
+  <wsdl:message name="IService1_Delete_table_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Delete_tableResponse" />
+  </wsdl:message>
   <wsdl:portType name="IService1">
     <wsdl:operation name="Select_ID">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/Select_ID" message="tns:IService1_Select_ID_InputMessage" />
@@ -77,6 +138,46 @@
     <wsdl:operation name="Delete_visitor">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/Delete_visitor" message="tns:IService1_Delete_visitor_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/Delete_visitorResponse" message="tns:IService1_Delete_visitor_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Select_admins">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/Select_admins" message="tns:IService1_Select_admins_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/Select_adminsResponse" message="tns:IService1_Select_admins_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Update_admin">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/Update_admin" message="tns:IService1_Update_admin_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/Update_adminResponse" message="tns:IService1_Update_admin_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Insert_visitor">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/Insert_visitor" message="tns:IService1_Insert_visitor_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/Insert_visitorResponse" message="tns:IService1_Insert_visitor_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Select_reservation">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/Select_reservation" message="tns:IService1_Select_reservation_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/Select_reservationResponse" message="tns:IService1_Select_reservation_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Update_reservation">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/Update_reservation" message="tns:IService1_Update_reservation_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/Update_reservationResponse" message="tns:IService1_Update_reservation_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Delete_reservation">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/Delete_reservation" message="tns:IService1_Delete_reservation_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/Delete_reservationResponse" message="tns:IService1_Delete_reservation_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Insert_reservation">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/Insert_reservation" message="tns:IService1_Insert_reservation_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/Insert_reservationResponse" message="tns:IService1_Insert_reservation_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Select_free_tables">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/Select_free_tables" message="tns:IService1_Select_free_tables_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/Select_free_tablesResponse" message="tns:IService1_Select_free_tables_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Select_tables">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/Select_tables" message="tns:IService1_Select_tables_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/Select_tablesResponse" message="tns:IService1_Select_tables_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Delete_table">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/Delete_table" message="tns:IService1_Delete_table_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/Delete_tableResponse" message="tns:IService1_Delete_table_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IService1" type="tns:IService1">
@@ -137,6 +238,96 @@
     </wsdl:operation>
     <wsdl:operation name="Delete_visitor">
       <soap:operation soapAction="http://tempuri.org/IService1/Delete_visitor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Select_admins">
+      <soap:operation soapAction="http://tempuri.org/IService1/Select_admins" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Update_admin">
+      <soap:operation soapAction="http://tempuri.org/IService1/Update_admin" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Insert_visitor">
+      <soap:operation soapAction="http://tempuri.org/IService1/Insert_visitor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Select_reservation">
+      <soap:operation soapAction="http://tempuri.org/IService1/Select_reservation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Update_reservation">
+      <soap:operation soapAction="http://tempuri.org/IService1/Update_reservation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Delete_reservation">
+      <soap:operation soapAction="http://tempuri.org/IService1/Delete_reservation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Insert_reservation">
+      <soap:operation soapAction="http://tempuri.org/IService1/Insert_reservation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Select_free_tables">
+      <soap:operation soapAction="http://tempuri.org/IService1/Select_free_tables" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Select_tables">
+      <soap:operation soapAction="http://tempuri.org/IService1/Select_tables" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Delete_table">
+      <soap:operation soapAction="http://tempuri.org/IService1/Delete_table" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

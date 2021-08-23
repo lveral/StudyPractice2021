@@ -22,7 +22,7 @@ namespace Restaurant
         private void ReservationAllForm_Load(object sender, EventArgs e)
         {
             //////////////////////////////////////////////////////////////////////
-            dataGridTables.DataSource = SQLClass.Select_reservation();
+            dataGridTables.DataSource = Program.client.Select_reservation("", "");
             /////////////////////////////////////////////////////////////////////
             dataGridTables.Columns[0].Visible = false;
             dataGridTables.Columns[4].ReadOnly = true;
@@ -52,7 +52,7 @@ namespace Restaurant
             string dateFrom = datePickerFrom.Value.ToString("yyyy-MM-dd");
             string dateTo = datePickerTo.Value.ToString("yyyy-MM-dd");
             ////////////////////////////////////////////////////////////////////////////////////
-            dataGridTables.DataSource = SQLClass.Select_reservation(dateFrom, dateTo);
+            dataGridTables.DataSource = Program.client.Select_reservation(dateFrom, dateTo);
             //////////////////////////////////////////////////////////////////////////////////
             dataGridTables.Columns[0].Visible = false;
             dataGridTables.Columns[4].ReadOnly = true;
@@ -77,7 +77,7 @@ namespace Restaurant
             string date = dataGridTables.Rows[index].Cells[2].Value.ToString();
             string time = dataGridTables.Rows[index].Cells[3].Value.ToString();
             ////////////////////////////////////////////////////////////////////////
-            SQLClass.Update_reservation(id, id_t, date, time);
+            Program.client.Update_reservation(id, id_t, date, time);
             /////////////////////////////////////////////////////////////////////////
         }
 
@@ -87,7 +87,7 @@ namespace Restaurant
             string id = dataGridTables.Rows[index].Cells[0].Value.ToString();
             dataGridTables.Rows.RemoveAt(index);
             ////////////////////////////////////////////////////
-            SQLClass.Delete_reservation(id);
+            Program.client.Delete_reservation(id);
             ////////////////////////////////////////////////////
         }
     }

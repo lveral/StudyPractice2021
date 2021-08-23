@@ -24,24 +24,9 @@ namespace Restaurant
         private void TableForm_Load(object sender, EventArgs e)
         {
             ////////////////////////////////////////////////////////////
-            dt = SQLClass.Select_tables();
+            dt = Program.client.Select_tables();
             dataGridTables.DataSource = dt;
             /////////////////////////////////////////////////////////////
-
-
-
-            /*
-            List<string> select_tables = SQLClass.Select("select * from tables");
-            DataTable tables = new DataTable();
-            tables.Columns.Add("Номер стола", typeof(int));
-            tables.Columns.Add("Количество персон", typeof(int));
-
-            for (int i = 0; i < select_tables.Count; i += 2)
-            {
-                tables.Rows.Add(select_tables[i], select_tables[i + 1]);
-            }
-
-            dataGridTables.DataSource = tables;*/
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -61,7 +46,7 @@ namespace Restaurant
             string id_t = dataGridTables.Rows[index].Cells[0].Value.ToString();
             dataGridTables.Rows.RemoveAt(index);
             ///////////////////////////////////////////////////////////////
-            SQLClass.Delete_table(id_t);
+            Program.client.Delete_table(id_t);
             ///////////////////////////////////////////////////////////////
         }
 

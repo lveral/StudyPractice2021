@@ -65,9 +65,10 @@ namespace Restaurant
                 Program.Role = "посетитель";
             }
             /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-            SQLClass.Insert_visitor(textBoxLogin.Text, textBoxPassword.Text, textBoxFirstN.Text, 
+            Program.client.Insert_visitor(textBoxLogin.Text, textBoxPassword.Text, textBoxFirstN.Text, 
                 textBoxMiddleN.Text, textBoxLastN.Text, textBoxPhone.Text, Program.Role);
-            Program.ID = SQLClass.Select_ID(textBoxLogin.Text);
+            Program.ID = Program.client.Select_ID(textBoxLogin.Text);
+            
             /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
             Hide();
             new AdminForm().ShowDialog();

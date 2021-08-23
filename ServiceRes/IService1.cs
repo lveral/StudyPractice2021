@@ -40,6 +40,30 @@ namespace ServiceRes
         [OperationContract]
         void Update_admin(string id);
 
+        [OperationContract]
+        void Insert_visitor(string login, string password, string f_name, string m_name, string l_name, string phone, string role);
+
+        [OperationContract]
+        DataTable Select_reservation(string dateFrom,string dateTo);
+
+        [OperationContract]
+        void Update_reservation(string id,string id_t,string date,string time);
+
+        [OperationContract]
+        void Delete_reservation(string id);
+
+        [OperationContract]
+        void Insert_reservation(string TableId,string Date,string Time, string id);
+
+        [OperationContract]
+        List<string> Select_free_tables(string date,int time);
+
+        [OperationContract]
+        DataTable Select_tables();
+
+        [OperationContract]
+        void Delete_table(string id);
+
         // TODO: Добавьте здесь операции служб
     }
 

@@ -54,7 +54,7 @@ namespace Restaurant
                 return;
             }
             //////////////////////////////////////////////////////////////////////////
-            List<string> free_tables = SQLClass.Select_free_tables(date, time);
+            List<string> free_tables = Program.client.Select_free_tables(date, time).ToList<string>();
             ////////////////////////////////////////////////////////////////////////
             int x = 10;
             int y = 10;
@@ -115,7 +115,7 @@ namespace Restaurant
         void MakeOrder(object sender, EventArgs e)
         {
             /////////////////////////////////////////////////////////////
-            SQLClass.Insert_reservation(TableId, Date, Time);
+            Program.client.Insert_reservation(TableId, Date, Time, Program.ID);
             /////////////////////////////////////////////////////////////
             panelOrder.Controls.Clear();
             MessageBox.Show("Забронировано!");

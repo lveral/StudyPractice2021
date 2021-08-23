@@ -44,7 +44,6 @@ namespace ServiceRes
         {
             SQLClass.Delete_visitor(id);
         }
-
         public DataTable Select_admins()
         {
             return SQLClass.Select_admins();
@@ -53,6 +52,49 @@ namespace ServiceRes
         public void Update_admin(string id)
         {
             SQLClass.Update_admin(id);
+        }
+        public void Insert_visitor(string login, string password, string f_name, string m_name, string l_name, string phone, string role)
+        {
+            SQLClass.Insert_visitor(login, password, f_name, m_name, l_name, phone, role);
+        }
+
+        public DataTable Select_reservation(string dateFrom, string dateTo)
+        {
+            if (dateFrom == "")
+            {
+                return SQLClass.Select_reservation();
+            }
+            return SQLClass.Select_reservation(dateFrom, dateTo);
+        }
+
+        public void Update_reservation(string id, string id_t, string date, string time)
+        {
+            SQLClass.Update_reservation(id, id_t, date, time);
+        }
+
+        public void Delete_reservation(string id)
+        {
+            SQLClass.Delete_reservation(id);
+        }
+
+        public void Insert_reservation(string TableId, string Date, string Time, string id)
+        {
+            SQLClass.Insert_reservation(TableId, Date, Time, id);
+        }
+
+        public List<string> Select_free_tables(string date, int time)
+        {
+            return SQLClass.Select_free_tables(date, time);
+        }
+
+        public DataTable Select_tables()
+        {
+            return SQLClass.Select_tables();
+        }
+
+        public void Delete_table(string id)
+        {
+            SQLClass.Delete_table(id); 
         }
     }
 }
