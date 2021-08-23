@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Runtime.Serialization;
 using System.ServiceModel;
@@ -23,6 +24,21 @@ namespace ServiceRes
 
         [OperationContract]
         string Exist_UserWithPass(string login, string password);
+
+        [OperationContract]
+        void Update_visitor(string login, string password, string f_name, string m_name, string l_name, string phone, string role, string id);
+
+        [OperationContract]
+        List<string> Select_visitor(string id);
+
+        [OperationContract]
+        void Delete_visitor(string id);
+
+        [OperationContract]
+        DataTable Select_admins();
+
+        [OperationContract]
+        void Update_admin(string id);
 
         // TODO: Добавьте здесь операции служб
     }

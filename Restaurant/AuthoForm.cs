@@ -27,8 +27,8 @@ namespace Restaurant
             string login = LoginBox.Text;
             string password = PasswordBox.Text;
             ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-            string existUser = 
-            string existUserWithPass = SQLClass.Exist_UserWithPass(login, password);
+            string existUser = Program.client.Exist_User(login);
+            string existUserWithPass = Program.client.Exist_UserWithPass(login, password);
             /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
             
             if (existUser == "0")

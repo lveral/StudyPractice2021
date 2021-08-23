@@ -27,7 +27,7 @@ namespace Restaurant
         private void InfoAdminsForm_Load(object sender, EventArgs e)
         {
             /////////////////////////////////////////////////////////////////////////////////
-            dataGridTables.DataSource = SQLClass.Select_admins();
+            dataGridTables.DataSource = Program.client.Se
             /////////////////////////////////////////////////////////////////////////////////
             dataGridTables.Columns[0].Visible = false;
             dataGridTables.Columns[1].ReadOnly = true;

@@ -4,7 +4,7 @@
     <xsd:schema targetNamespace="http://tempuri.org/Imports">
       <xsd:import schemaLocation="http://localhost:53409/Service1.svc?xsd=xsd0" namespace="http://tempuri.org/" />
       <xsd:import schemaLocation="http://localhost:53409/Service1.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
-      <xsd:import schemaLocation="http://localhost:53409/Service1.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/ServiceRes" />
+      <xsd:import schemaLocation="http://localhost:53409/Service1.svc?xsd=xsd2" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
     </xsd:schema>
   </wsdl:types>
   <wsdl:message name="IService1_Select_ID_InputMessage">
@@ -19,11 +19,35 @@
   <wsdl:message name="IService1_Select_Role_OutputMessage">
     <wsdl:part name="parameters" element="tns:Select_RoleResponse" />
   </wsdl:message>
-  <wsdl:message name="IService1_GetDataUsingDataContract_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetDataUsingDataContract" />
+  <wsdl:message name="IService1_Exist_User_InputMessage">
+    <wsdl:part name="parameters" element="tns:Exist_User" />
   </wsdl:message>
-  <wsdl:message name="IService1_GetDataUsingDataContract_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetDataUsingDataContractResponse" />
+  <wsdl:message name="IService1_Exist_User_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Exist_UserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_Exist_UserWithPass_InputMessage">
+    <wsdl:part name="parameters" element="tns:Exist_UserWithPass" />
+  </wsdl:message>
+  <wsdl:message name="IService1_Exist_UserWithPass_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Exist_UserWithPassResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_Update_visitor_InputMessage">
+    <wsdl:part name="parameters" element="tns:Update_visitor" />
+  </wsdl:message>
+  <wsdl:message name="IService1_Update_visitor_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Update_visitorResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_Select_visitor_InputMessage">
+    <wsdl:part name="parameters" element="tns:Select_visitor" />
+  </wsdl:message>
+  <wsdl:message name="IService1_Select_visitor_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Select_visitorResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_Delete_visitor_InputMessage">
+    <wsdl:part name="parameters" element="tns:Delete_visitor" />
+  </wsdl:message>
+  <wsdl:message name="IService1_Delete_visitor_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Delete_visitorResponse" />
   </wsdl:message>
   <wsdl:portType name="IService1">
     <wsdl:operation name="Select_ID">
@@ -34,9 +58,25 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/Select_Role" message="tns:IService1_Select_Role_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/Select_RoleResponse" message="tns:IService1_Select_Role_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="GetDataUsingDataContract">
-      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetDataUsingDataContract" message="tns:IService1_GetDataUsingDataContract_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetDataUsingDataContractResponse" message="tns:IService1_GetDataUsingDataContract_OutputMessage" />
+    <wsdl:operation name="Exist_User">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/Exist_User" message="tns:IService1_Exist_User_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/Exist_UserResponse" message="tns:IService1_Exist_User_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Exist_UserWithPass">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/Exist_UserWithPass" message="tns:IService1_Exist_UserWithPass_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/Exist_UserWithPassResponse" message="tns:IService1_Exist_UserWithPass_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Update_visitor">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/Update_visitor" message="tns:IService1_Update_visitor_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/Update_visitorResponse" message="tns:IService1_Update_visitor_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Select_visitor">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/Select_visitor" message="tns:IService1_Select_visitor_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/Select_visitorResponse" message="tns:IService1_Select_visitor_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Delete_visitor">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/Delete_visitor" message="tns:IService1_Delete_visitor_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/Delete_visitorResponse" message="tns:IService1_Delete_visitor_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IService1" type="tns:IService1">
@@ -59,8 +99,44 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="GetDataUsingDataContract">
-      <soap:operation soapAction="http://tempuri.org/IService1/GetDataUsingDataContract" style="document" />
+    <wsdl:operation name="Exist_User">
+      <soap:operation soapAction="http://tempuri.org/IService1/Exist_User" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Exist_UserWithPass">
+      <soap:operation soapAction="http://tempuri.org/IService1/Exist_UserWithPass" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Update_visitor">
+      <soap:operation soapAction="http://tempuri.org/IService1/Update_visitor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Select_visitor">
+      <soap:operation soapAction="http://tempuri.org/IService1/Select_visitor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Delete_visitor">
+      <soap:operation soapAction="http://tempuri.org/IService1/Delete_visitor" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

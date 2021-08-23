@@ -49,7 +49,7 @@ namespace Restaurant
             }
 
             //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-            SQLClass.Update_visitor(textBoxLogin.Text, Password, textBoxFirstN.Text, textBoxMiddleN.Text, textBoxLastN.Text, textBoxPhone.Text);
+            Program.client.Update_visitor(textBoxLogin.Text, Password, textBoxFirstN.Text, textBoxMiddleN.Text, textBoxLastN.Text, textBoxPhone.Text, Program.Role, Program.ID);
             //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
             if (ch)
             {
@@ -65,7 +65,8 @@ namespace Restaurant
         private void AccountForm_Load(object sender, EventArgs e)
         {
             ////////////////////////////////////////////////////////////////////////////////////////////
-            List<string> visitor = SQLClass.Select_visitor();
+            string[] vs = Program.client.Select_visitor(id: Program.ID);
+            List<string> visitor = vs.ToList<string>();
             ////////////////////////////////////////////////////////////////////////////////////////////
             textBoxLogin.Text = visitor[0];
             Password = visitor[1];
@@ -88,7 +89,7 @@ namespace Restaurant
             if (dialogResult == DialogResult.Yes)
             {
                 ////////////////////////////////////////////////////////////////////////////////////////////
-                SQLClass.Delete_visitor();
+                Program.client.Delete_visitor(Program.ID);
                 ////////////////////////////////////////////////////////////////////////////////////////////
                 Program.ID = "";
                 MessageBox.Show("Аккаунт удален. Обновите окно");

@@ -171,9 +171,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <None Include="Connected Services\ServiceReference\Restaurant.ServiceReference.CompositeType.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
     <None Include="Connected Services\ServiceReference\Service1.wsdl" />
     <None Include="Connected Services\ServiceReference\Service1.xsd">
       <SubType>Designer</SubType>

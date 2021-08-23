@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Runtime.Serialization;
 using System.ServiceModel;
@@ -22,12 +23,36 @@ namespace ServiceRes
         }
         public string Exist_User(string login)
         {
-            return SQLClass.Select_ID(login);
+            return SQLClass.Exist_User(login);
         }
         public string Exist_UserWithPass(string login, string password)
         {
-            return SQLClass.Select_Role(login);
+            return SQLClass.Exist_UserWithPass(login, password);
         }
 
+        public void Update_visitor(string login, string password, string f_name, string m_name, string l_name, string phone, string role, string id)
+        {
+            SQLClass.Update_visitor(login, password, f_name, m_name, l_name, phone, role, id);
+        }
+
+        public List<string> Select_visitor(string id)
+        {
+            return SQLClass.Select_visitor(id);
+        }
+
+        public void Delete_visitor(string id)
+        {
+            SQLClass.Delete_visitor(id);
+        }
+
+        public DataTable Select_admins()
+        {
+            return SQLClass.Select_admins();
+        }
+
+        public void Update_admin(string id)
+        {
+            SQLClass.Update_admin(id);
+        }
     }
 }

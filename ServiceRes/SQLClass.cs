@@ -38,11 +38,15 @@ namespace ServiceRes
         }
         public static void Query(string Text)
         {
+            con.Open();
+
             NpgsqlCommand cmd = new NpgsqlCommand(Text, con);
             NpgsqlDataReader reader = cmd.ExecuteReader();
             
             reader.Close();
             cmd.Dispose();
+
+            con.Close();
         }
         public static void Insert_visitor(string login, string password, string f_name, string m_name, string l_name, string phone, string role)
         {

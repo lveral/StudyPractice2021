@@ -9,70 +9,7 @@
 //------------------------------------------------------------------------------
 
 namespace Restaurant.ServiceReference {
-    using System.Runtime.Serialization;
-    using System;
     
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="CompositeType", Namespace="http://schemas.datacontract.org/2004/07/ServiceRes")]
-    [System.SerializableAttribute()]
-    public partial class CompositeType : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private bool BoolValueField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string StringValueField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public bool BoolValue {
-            get {
-                return this.BoolValueField;
-            }
-            set {
-                if ((this.BoolValueField.Equals(value) != true)) {
-                    this.BoolValueField = value;
-                    this.RaisePropertyChanged("BoolValue");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string StringValue {
-            get {
-                return this.StringValueField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.StringValueField, value) != true)) {
-                    this.StringValueField = value;
-                    this.RaisePropertyChanged("StringValue");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceReference.IService1")]
@@ -90,11 +27,35 @@ namespace Restaurant.ServiceReference {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/Select_Role", ReplyAction="http://tempuri.org/IService1/Select_RoleResponse")]
         System.Threading.Tasks.Task<string> Select_RoleAsync(string login);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetDataUsingDataContract", ReplyAction="http://tempuri.org/IService1/GetDataUsingDataContractResponse")]
-        Restaurant.ServiceReference.CompositeType GetDataUsingDataContract(Restaurant.ServiceReference.CompositeType composite);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/Exist_User", ReplyAction="http://tempuri.org/IService1/Exist_UserResponse")]
+        string Exist_User(string login);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetDataUsingDataContract", ReplyAction="http://tempuri.org/IService1/GetDataUsingDataContractResponse")]
-        System.Threading.Tasks.Task<Restaurant.ServiceReference.CompositeType> GetDataUsingDataContractAsync(Restaurant.ServiceReference.CompositeType composite);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/Exist_User", ReplyAction="http://tempuri.org/IService1/Exist_UserResponse")]
+        System.Threading.Tasks.Task<string> Exist_UserAsync(string login);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/Exist_UserWithPass", ReplyAction="http://tempuri.org/IService1/Exist_UserWithPassResponse")]
+        string Exist_UserWithPass(string login, string password);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/Exist_UserWithPass", ReplyAction="http://tempuri.org/IService1/Exist_UserWithPassResponse")]
+        System.Threading.Tasks.Task<string> Exist_UserWithPassAsync(string login, string password);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/Update_visitor", ReplyAction="http://tempuri.org/IService1/Update_visitorResponse")]
+        void Update_visitor(string login, string password, string f_name, string m_name, string l_name, string phone, string role, string id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/Update_visitor", ReplyAction="http://tempuri.org/IService1/Update_visitorResponse")]
+        System.Threading.Tasks.Task Update_visitorAsync(string login, string password, string f_name, string m_name, string l_name, string phone, string role, string id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/Select_visitor", ReplyAction="http://tempuri.org/IService1/Select_visitorResponse")]
+        string[] Select_visitor(string id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/Select_visitor", ReplyAction="http://tempuri.org/IService1/Select_visitorResponse")]
+        System.Threading.Tasks.Task<string[]> Select_visitorAsync(string id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/Delete_visitor", ReplyAction="http://tempuri.org/IService1/Delete_visitorResponse")]
+        void Delete_visitor(string id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/Delete_visitor", ReplyAction="http://tempuri.org/IService1/Delete_visitorResponse")]
+        System.Threading.Tasks.Task Delete_visitorAsync(string id);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -140,12 +101,44 @@ namespace Restaurant.ServiceReference {
             return base.Channel.Select_RoleAsync(login);
         }
         
-        public Restaurant.ServiceReference.CompositeType GetDataUsingDataContract(Restaurant.ServiceReference.CompositeType composite) {
-            return base.Channel.GetDataUsingDataContract(composite);
+        public string Exist_User(string login) {
+            return base.Channel.Exist_User(login);
         }
         
-        public System.Threading.Tasks.Task<Restaurant.ServiceReference.CompositeType> GetDataUsingDataContractAsync(Restaurant.ServiceReference.CompositeType composite) {
-            return base.Channel.GetDataUsingDataContractAsync(composite);
+        public System.Threading.Tasks.Task<string> Exist_UserAsync(string login) {
+            return base.Channel.Exist_UserAsync(login);
+        }
+        
+        public string Exist_UserWithPass(string login, string password) {
+            return base.Channel.Exist_UserWithPass(login, password);
+        }
+        
+        public System.Threading.Tasks.Task<string> Exist_UserWithPassAsync(string login, string password) {
+            return base.Channel.Exist_UserWithPassAsync(login, password);
+        }
+        
+        public void Update_visitor(string login, string password, string f_name, string m_name, string l_name, string phone, string role, string id) {
+            base.Channel.Update_visitor(login, password, f_name, m_name, l_name, phone, role, id);
+        }
+        
+        public System.Threading.Tasks.Task Update_visitorAsync(string login, string password, string f_name, string m_name, string l_name, string phone, string role, string id) {
+            return base.Channel.Update_visitorAsync(login, password, f_name, m_name, l_name, phone, role, id);
+        }
+        
+        public string[] Select_visitor(string id) {
+            return base.Channel.Select_visitor(id);
+        }
+        
+        public System.Threading.Tasks.Task<string[]> Select_visitorAsync(string id) {
+            return base.Channel.Select_visitorAsync(id);
+        }
+        
+        public void Delete_visitor(string id) {
+            base.Channel.Delete_visitor(id);
+        }
+        
+        public System.Threading.Tasks.Task Delete_visitorAsync(string id) {
+            return base.Channel.Delete_visitorAsync(id);
         }
     }
 }
