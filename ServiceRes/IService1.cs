@@ -59,11 +59,13 @@ namespace ServiceRes
         List<string> Select_free_tables(string date,int time);
 
         [OperationContract]
-        DataTable Select_tables();
+        List<string> Select_tables();
 
         [OperationContract]
         void Delete_table(string id);
 
+        [OperationContract]
+        void Update_table(List<string> dt);
         // TODO: Добавьте здесь операции служб
     }
 

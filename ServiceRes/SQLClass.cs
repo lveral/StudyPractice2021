@@ -158,16 +158,66 @@ namespace ServiceRes
                 "where r.id is NULL " +
                 "order by t.id", date, time - 2, time + 1));
         }
-        public static DataTable Select_tables()
+        public static List<string> Select_tables()
         {
+            /*
             SQLClass.nda = new NpgsqlDataAdapter(@"select id as ""Номер стола"", persons as ""Количество персон"" from tables", SQLClass.con);
             dt = new DataTable();
-            SQLClass.nda.Fill(dt);
-            return dt;
+            SQLClass.nda.Fill(dt);*/
+
+            return SQLClass.Request(@"select id, persons from tables");
         }
         public static void Delete_table(string id_t)
         {
             SQLClass.Query("Delete from tables where id = " + id_t);
+        }
+        public static void Update_table(List<string> dtl)
+        {
+            List<string> NameColumns = new List<string>();
+            NameColumns.Add("Номер стола");
+            NameColumns.Add("Количество персон");
+
+            List<string> list = dtl.ToList<string>();
+            List<string[]> list2 = new List<string[]>();
+            for (int i = 0; i < list.Count; i += 2)
+            {
+                list2.Add(new string[] { list[i], list[i + 1] });
+            }
+            dt = ToDataTable(list2, NameColumns);
+
+            SQLClass.nda = new NpgsqlDataAdapter(@"select id as ""Номер стола"", persons as ""Количество персон"" from tables", SQLClass.con);
+
+            ncb = new NpgsqlCommandBuilder(nda);
+            nda.Update(dt);
+        }
+        public static DataTable ToDataTable(List<string[]> list, List<string> NameColums)
+        {
+            // New table.
+            DataTable table = new DataTable();
+
+            // Get max columns.
+            int columns = 0;
+            foreach (var array in list)
+            {
+                if (array.Length > columns)
+                {
+                    columns = array.Length;
+                }
+            }
+
+            // Add columns.
+            for (int i = 0; i < columns; i++)
+            {
+                table.Columns.Add(NameColums[i]);
+            }
+
+            // Add rows.
+            foreach (var array in list)
+            {
+                table.Rows.Add(array);
+            }
+
+            return table;
         }
     }
 }

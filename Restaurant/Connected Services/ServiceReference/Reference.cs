@@ -106,16 +106,22 @@ namespace Restaurant.ServiceReference {
         System.Threading.Tasks.Task<string[]> Select_free_tablesAsync(string date, int time);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/Select_tables", ReplyAction="http://tempuri.org/IService1/Select_tablesResponse")]
-        System.Data.DataTable Select_tables();
+        string[] Select_tables();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/Select_tables", ReplyAction="http://tempuri.org/IService1/Select_tablesResponse")]
-        System.Threading.Tasks.Task<System.Data.DataTable> Select_tablesAsync();
+        System.Threading.Tasks.Task<string[]> Select_tablesAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/Delete_table", ReplyAction="http://tempuri.org/IService1/Delete_tableResponse")]
         void Delete_table(string id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/Delete_table", ReplyAction="http://tempuri.org/IService1/Delete_tableResponse")]
         System.Threading.Tasks.Task Delete_tableAsync(string id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/Update_table", ReplyAction="http://tempuri.org/IService1/Update_tableResponse")]
+        void Update_table(string[] dt);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/Update_table", ReplyAction="http://tempuri.org/IService1/Update_tableResponse")]
+        System.Threading.Tasks.Task Update_tableAsync(string[] dt);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -265,11 +271,11 @@ namespace Restaurant.ServiceReference {
             return base.Channel.Select_free_tablesAsync(date, time);
         }
         
-        public System.Data.DataTable Select_tables() {
+        public string[] Select_tables() {
             return base.Channel.Select_tables();
         }
         
-        public System.Threading.Tasks.Task<System.Data.DataTable> Select_tablesAsync() {
+        public System.Threading.Tasks.Task<string[]> Select_tablesAsync() {
             return base.Channel.Select_tablesAsync();
         }
         
@@ -279,6 +285,14 @@ namespace Restaurant.ServiceReference {
         
         public System.Threading.Tasks.Task Delete_tableAsync(string id) {
             return base.Channel.Delete_tableAsync(id);
+        }
+        
+        public void Update_table(string[] dt) {
+            base.Channel.Update_table(dt);
+        }
+        
+        public System.Threading.Tasks.Task Update_tableAsync(string[] dt) {
+            return base.Channel.Update_tableAsync(dt);
         }
     }
 }

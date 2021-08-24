@@ -24,8 +24,19 @@ namespace Restaurant
         private void TableForm_Load(object sender, EventArgs e)
         {
             ////////////////////////////////////////////////////////////
-            dt = Program.client.Select_tables();
+            List<string> NameColumns = new List<string>();
+            NameColumns.Add("Номер стола");
+            NameColumns.Add("Количество персон");
+
+            List<string> list = Program.client.Select_tables().ToList<string>();
+            List<string[]> list2 = new List<string[]>();
+            for (int i = 0; i < list.Count; i += 2)
+            {
+                list2.Add(new string[] { list[i], list[i + 1] });
+            }
+            dt = Program.ToDataTable(list2, NameColumns);
             dataGridTables.DataSource = dt;
+
             /////////////////////////////////////////////////////////////
         }
 
@@ -52,8 +63,13 @@ namespace Restaurant
 
         private void buttonSave_Click(object sender, EventArgs e)
         {
-            SQLClass.ncb = new NpgsqlCommandBuilder(SQLClass.nda);
-            SQLClass.nda.Update(dt);
+            string[] list = new string[] { };
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                list.Append(dt.Rows[i][0].ToString());
+                list.Append(dt.Rows[i][1].ToString());
+            }
+            Program.client.Update_table(list);
         }
 
     }

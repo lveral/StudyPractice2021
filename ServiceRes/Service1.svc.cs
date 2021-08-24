@@ -87,7 +87,7 @@ namespace ServiceRes
             return SQLClass.Select_free_tables(date, time);
         }
 
-        public DataTable Select_tables()
+        public List<string> Select_tables()
         {
             return SQLClass.Select_tables();
         }
@@ -95,6 +95,11 @@ namespace ServiceRes
         public void Delete_table(string id)
         {
             SQLClass.Delete_table(id); 
+        }
+
+        public void Update_table(List<string> dt)
+        {
+            SQLClass.Update_table(dt);
         }
     }
 }

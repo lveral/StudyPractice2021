@@ -110,6 +110,12 @@
   <wsdl:message name="IService1_Delete_table_OutputMessage">
     <wsdl:part name="parameters" element="tns:Delete_tableResponse" />
   </wsdl:message>
+  <wsdl:message name="IService1_Update_table_InputMessage">
+    <wsdl:part name="parameters" element="tns:Update_table" />
+  </wsdl:message>
+  <wsdl:message name="IService1_Update_table_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Update_tableResponse" />
+  </wsdl:message>
   <wsdl:portType name="IService1">
     <wsdl:operation name="Select_ID">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/Select_ID" message="tns:IService1_Select_ID_InputMessage" />
@@ -178,6 +184,10 @@
     <wsdl:operation name="Delete_table">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/Delete_table" message="tns:IService1_Delete_table_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/Delete_tableResponse" message="tns:IService1_Delete_table_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Update_table">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/Update_table" message="tns:IService1_Update_table_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/Update_tableResponse" message="tns:IService1_Update_table_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IService1" type="tns:IService1">
@@ -328,6 +338,15 @@
     </wsdl:operation>
     <wsdl:operation name="Delete_table">
       <soap:operation soapAction="http://tempuri.org/IService1/Delete_table" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Update_table">
+      <soap:operation soapAction="http://tempuri.org/IService1/Update_table" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
