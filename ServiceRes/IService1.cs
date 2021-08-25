@@ -35,7 +35,7 @@ namespace ServiceRes
         void Delete_visitor(string id);
 
         [OperationContract]
-        DataTable Select_admins();
+        List<string> Select_admins();
 
         [OperationContract]
         void Update_admin(string id);
@@ -44,7 +44,7 @@ namespace ServiceRes
         void Insert_visitor(string login, string password, string f_name, string m_name, string l_name, string phone, string role);
 
         [OperationContract]
-        DataTable Select_reservation(string dateFrom,string dateTo);
+        List<string> Select_reservation(string dateFrom,string dateTo);
 
         [OperationContract]
         void Update_reservation(string id,string id_t,string date,string time);
@@ -65,7 +65,11 @@ namespace ServiceRes
         void Delete_table(string id);
 
         [OperationContract]
-        void Update_table(List<string> dt);
+        void Update_table(string id, string persons);
+
+
+        [OperationContract]
+        void Add_table(string id, string persons);
         // TODO: Добавьте здесь операции служб
     }
 

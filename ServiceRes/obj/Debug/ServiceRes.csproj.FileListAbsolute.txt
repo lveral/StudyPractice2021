@@ -27,4 +27,3 @@ C:\Users\ureki\Documents\GitHub\Restaurant\ServiceRes\obj\Debug\ServiceRes.cspro
 C:\Users\ureki\Documents\GitHub\Restaurant\ServiceRes\obj\Debug\ServiceRes.csproj.CopyComplete
 C:\Users\ureki\Documents\GitHub\Restaurant\ServiceRes\obj\Debug\ServiceRes.dll
 C:\Users\ureki\Documents\GitHub\Restaurant\ServiceRes\obj\Debug\ServiceRes.pdb
-C:\Users\ureki\Documents\GitHub\Restaurant\ServiceRes\obj\Debug\ServiceRes.csproj.AssemblyReference.cache

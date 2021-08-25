@@ -27,8 +27,22 @@ namespace Restaurant
         private void InfoAdminsForm_Load(object sender, EventArgs e)
         {
             /////////////////////////////////////////////////////////////////////////////////
-            
-            dataGridTables.DataSource = Program.client.Select_admins();
+            List<string> NameColumns = new List<string>();
+            NameColumns.Add("id");
+            NameColumns.Add("Фамилия");
+            NameColumns.Add("Имя");
+            NameColumns.Add("Отчетсво");
+            NameColumns.Add("Номер телефона");
+            NameColumns.Add("Логин");
+
+            List<string> list = Program.client.Select_admins().ToList<string>();
+            List<string[]> list2 = new List<string[]>();
+            for (int i = 0; i < list.Count; i += 6)
+            {
+                list2.Add(new string[] {list[i], list[i + 1], list[i + 2], list[i + 3], list[i + 4], list[i + 5] });
+            }
+            dt = Program.ToDataTable(list2, NameColumns);
+            dataGridTables.DataSource = dt;
             /////////////////////////////////////////////////////////////////////////////////
             dataGridTables.Columns[0].Visible = false;
             dataGridTables.Columns[1].ReadOnly = true;

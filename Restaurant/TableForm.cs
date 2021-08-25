@@ -37,6 +37,9 @@ namespace Restaurant
             dt = Program.ToDataTable(list2, NameColumns);
             dataGridTables.DataSource = dt;
 
+            //////dataGridTables.Columns[0].Visible = false;
+            dataGridTables.Columns[0].ReadOnly = true;
+            dataGridTables.Columns[1].ReadOnly = true;
             /////////////////////////////////////////////////////////////
         }
 
@@ -63,14 +66,24 @@ namespace Restaurant
 
         private void buttonSave_Click(object sender, EventArgs e)
         {
-            string[] list = new string[] { };
-            for (int i = 0; i < dt.Rows.Count; i++)
+            int index = dataGridTables.SelectedCells[0].RowIndex;
+
+            string id = dataGridTables.Rows[index].Cells[0].Value.ToString();
+            string persons = dataGridTables.Rows[index].Cells[1].Value.ToString();
+            new UpdateTablesForm(id, persons).ShowDialog();
+            /*
+            string[] list = new string[dt.Rows.Count * 2];
+            for (int i = 0; i < dt.Rows.Count*2; i+=2)
             {
-                list.Append(dt.Rows[i][0].ToString());
-                list.Append(dt.Rows[i][1].ToString());
+                list[i] = (dt.Rows[i / 2][0].ToString());
+                list[i + 1] = (dt.Rows[i / 2][1].ToString());
             }
-            Program.client.Update_table(list);
+            Program.client.Update_table(list);*/
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            new AddTablesForm().ShowDialog();
+        }
     }
 }

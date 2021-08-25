@@ -58,10 +58,10 @@ namespace Restaurant.ServiceReference {
         System.Threading.Tasks.Task Delete_visitorAsync(string id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/Select_admins", ReplyAction="http://tempuri.org/IService1/Select_adminsResponse")]
-        System.Data.DataTable Select_admins();
+        string[] Select_admins();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/Select_admins", ReplyAction="http://tempuri.org/IService1/Select_adminsResponse")]
-        System.Threading.Tasks.Task<System.Data.DataTable> Select_adminsAsync();
+        System.Threading.Tasks.Task<string[]> Select_adminsAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/Update_admin", ReplyAction="http://tempuri.org/IService1/Update_adminResponse")]
         void Update_admin(string id);
@@ -76,10 +76,10 @@ namespace Restaurant.ServiceReference {
         System.Threading.Tasks.Task Insert_visitorAsync(string login, string password, string f_name, string m_name, string l_name, string phone, string role);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/Select_reservation", ReplyAction="http://tempuri.org/IService1/Select_reservationResponse")]
-        System.Data.DataTable Select_reservation(string dateFrom, string dateTo);
+        string[] Select_reservation(string dateFrom, string dateTo);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/Select_reservation", ReplyAction="http://tempuri.org/IService1/Select_reservationResponse")]
-        System.Threading.Tasks.Task<System.Data.DataTable> Select_reservationAsync(string dateFrom, string dateTo);
+        System.Threading.Tasks.Task<string[]> Select_reservationAsync(string dateFrom, string dateTo);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/Update_reservation", ReplyAction="http://tempuri.org/IService1/Update_reservationResponse")]
         void Update_reservation(string id, string id_t, string date, string time);
@@ -118,10 +118,16 @@ namespace Restaurant.ServiceReference {
         System.Threading.Tasks.Task Delete_tableAsync(string id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/Update_table", ReplyAction="http://tempuri.org/IService1/Update_tableResponse")]
-        void Update_table(string[] dt);
+        void Update_table(string id, string persons);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/Update_table", ReplyAction="http://tempuri.org/IService1/Update_tableResponse")]
-        System.Threading.Tasks.Task Update_tableAsync(string[] dt);
+        System.Threading.Tasks.Task Update_tableAsync(string id, string persons);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/Add_table", ReplyAction="http://tempuri.org/IService1/Add_tableResponse")]
+        void Add_table(string id, string persons);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/Add_table", ReplyAction="http://tempuri.org/IService1/Add_tableResponse")]
+        System.Threading.Tasks.Task Add_tableAsync(string id, string persons);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -207,11 +213,11 @@ namespace Restaurant.ServiceReference {
             return base.Channel.Delete_visitorAsync(id);
         }
         
-        public System.Data.DataTable Select_admins() {
+        public string[] Select_admins() {
             return base.Channel.Select_admins();
         }
         
-        public System.Threading.Tasks.Task<System.Data.DataTable> Select_adminsAsync() {
+        public System.Threading.Tasks.Task<string[]> Select_adminsAsync() {
             return base.Channel.Select_adminsAsync();
         }
         
@@ -231,11 +237,11 @@ namespace Restaurant.ServiceReference {
             return base.Channel.Insert_visitorAsync(login, password, f_name, m_name, l_name, phone, role);
         }
         
-        public System.Data.DataTable Select_reservation(string dateFrom, string dateTo) {
+        public string[] Select_reservation(string dateFrom, string dateTo) {
             return base.Channel.Select_reservation(dateFrom, dateTo);
         }
         
-        public System.Threading.Tasks.Task<System.Data.DataTable> Select_reservationAsync(string dateFrom, string dateTo) {
+        public System.Threading.Tasks.Task<string[]> Select_reservationAsync(string dateFrom, string dateTo) {
             return base.Channel.Select_reservationAsync(dateFrom, dateTo);
         }
         
@@ -287,12 +293,20 @@ namespace Restaurant.ServiceReference {
             return base.Channel.Delete_tableAsync(id);
         }
         
-        public void Update_table(string[] dt) {
-            base.Channel.Update_table(dt);
+        public void Update_table(string id, string persons) {
+            base.Channel.Update_table(id, persons);
         }
         
-        public System.Threading.Tasks.Task Update_tableAsync(string[] dt) {
-            return base.Channel.Update_tableAsync(dt);
+        public System.Threading.Tasks.Task Update_tableAsync(string id, string persons) {
+            return base.Channel.Update_tableAsync(id, persons);
+        }
+        
+        public void Add_table(string id, string persons) {
+            base.Channel.Add_table(id, persons);
+        }
+        
+        public System.Threading.Tasks.Task Add_tableAsync(string id, string persons) {
+            return base.Channel.Add_tableAsync(id, persons);
         }
     }
 }

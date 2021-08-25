@@ -14,6 +14,7 @@ namespace Restaurant
     public partial class ReservationAllForm : Form
     {
         NpgsqlCommandBuilder ncb;
+        DataTable dt;
         public ReservationAllForm()
         {
             InitializeComponent();
@@ -22,9 +23,31 @@ namespace Restaurant
         private void ReservationAllForm_Load(object sender, EventArgs e)
         {
             //////////////////////////////////////////////////////////////////////
-            dataGridTables.DataSource = Program.client.Select_reservation("", "");
+            List<string> NameColumns = new List<string>();
+            NameColumns.Add("id");
+            NameColumns.Add("Номер стола");
+            NameColumns.Add("Дата");
+            NameColumns.Add("Время");
+            NameColumns.Add("Фамилия");
+            NameColumns.Add("Имя");
+            NameColumns.Add("Отчетсво");
+            NameColumns.Add("Номер телефона");
+            NameColumns.Add("Логин");
+
+            List<string> list = Program.client.Select_reservation("", "").ToList<string>();
+            List<string[]> list2 = new List<string[]>();
+            for (int i = 0; i < list.Count; i += 9)
+            {
+                list2.Add(new string[] { list[i], list[i + 1], list[i + 2].Substring(0, 10), list[i + 3], list[i + 4], 
+                    list[i + 5], list[i + 6], list[i + 7], list[i + 8] });
+            }
+            dt = Program.ToDataTable(list2, NameColumns);
+            dataGridTables.DataSource = dt;
             /////////////////////////////////////////////////////////////////////
             dataGridTables.Columns[0].Visible = false;
+            dataGridTables.Columns[1].ReadOnly = true;
+            dataGridTables.Columns[2].ReadOnly = true;
+            dataGridTables.Columns[3].ReadOnly = true;
             dataGridTables.Columns[4].ReadOnly = true;
             dataGridTables.Columns[5].ReadOnly = true;
             dataGridTables.Columns[6].ReadOnly = true;
@@ -52,9 +75,31 @@ namespace Restaurant
             string dateFrom = datePickerFrom.Value.ToString("yyyy-MM-dd");
             string dateTo = datePickerTo.Value.ToString("yyyy-MM-dd");
             ////////////////////////////////////////////////////////////////////////////////////
-            dataGridTables.DataSource = Program.client.Select_reservation(dateFrom, dateTo);
+            List<string> NameColumns = new List<string>();
+            NameColumns.Add("id");
+            NameColumns.Add("Номер стола");
+            NameColumns.Add("Дата");
+            NameColumns.Add("Время");
+            NameColumns.Add("Фамилия");
+            NameColumns.Add("Имя");
+            NameColumns.Add("Отчетсво");
+            NameColumns.Add("Номер телефона");
+            NameColumns.Add("Логин");
+
+            List<string> list = Program.client.Select_reservation(dateFrom, dateTo).ToList<string>();
+            List<string[]> list2 = new List<string[]>();
+            for (int i = 0; i < list.Count; i += 9)
+            {
+                list2.Add(new string[] { list[i], list[i + 1], list[i + 2], list[i + 3], list[i + 4],
+                    list[i + 5], list[i + 6], list[i + 7], list[i + 8] });
+            }
+            dt = Program.ToDataTable(list2, NameColumns);
+            dataGridTables.DataSource = dt;
             //////////////////////////////////////////////////////////////////////////////////
             dataGridTables.Columns[0].Visible = false;
+            dataGridTables.Columns[1].ReadOnly = true;
+            dataGridTables.Columns[2].ReadOnly = true;
+            dataGridTables.Columns[3].ReadOnly = true;
             dataGridTables.Columns[4].ReadOnly = true;
             dataGridTables.Columns[5].ReadOnly = true;
             dataGridTables.Columns[6].ReadOnly = true;
@@ -76,8 +121,16 @@ namespace Restaurant
             string id_t = dataGridTables.Rows[index].Cells[1].Value.ToString();
             string date = dataGridTables.Rows[index].Cells[2].Value.ToString();
             string time = dataGridTables.Rows[index].Cells[3].Value.ToString();
+            string f_name = dataGridTables.Rows[index].Cells[4].Value.ToString();
+            string m_name = dataGridTables.Rows[index].Cells[5].Value.ToString();
+            string l_name = dataGridTables.Rows[index].Cells[6].Value.ToString();
+            string phone = dataGridTables.Rows[index].Cells[7].Value.ToString();
+            string login = dataGridTables.Rows[index].Cells[8].Value.ToString();
+
+            new UpdateReservationForm(id, id_t, date, time, f_name, m_name, l_name, phone, login).ShowDialog();
+            ReservationAllForm_Load(sender, e);
             ////////////////////////////////////////////////////////////////////////
-            Program.client.Update_reservation(id, id_t, date, time);
+
             /////////////////////////////////////////////////////////////////////////
         }
 

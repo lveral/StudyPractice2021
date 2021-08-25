@@ -5,7 +5,6 @@
       <xsd:import schemaLocation="http://localhost:53409/Service1.svc?xsd=xsd0" namespace="http://tempuri.org/" />
       <xsd:import schemaLocation="http://localhost:53409/Service1.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
       <xsd:import schemaLocation="http://localhost:53409/Service1.svc?xsd=xsd2" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
-      <xsd:import schemaLocation="http://localhost:53409/Service1.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/System.Data" />
     </xsd:schema>
   </wsdl:types>
   <wsdl:message name="IService1_Select_ID_InputMessage">
@@ -116,6 +115,12 @@
   <wsdl:message name="IService1_Update_table_OutputMessage">
     <wsdl:part name="parameters" element="tns:Update_tableResponse" />
   </wsdl:message>
+  <wsdl:message name="IService1_Add_table_InputMessage">
+    <wsdl:part name="parameters" element="tns:Add_table" />
+  </wsdl:message>
+  <wsdl:message name="IService1_Add_table_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Add_tableResponse" />
+  </wsdl:message>
   <wsdl:portType name="IService1">
     <wsdl:operation name="Select_ID">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/Select_ID" message="tns:IService1_Select_ID_InputMessage" />
@@ -188,6 +193,10 @@
     <wsdl:operation name="Update_table">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/Update_table" message="tns:IService1_Update_table_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/Update_tableResponse" message="tns:IService1_Update_table_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Add_table">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/Add_table" message="tns:IService1_Add_table_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/Add_tableResponse" message="tns:IService1_Add_table_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IService1" type="tns:IService1">
@@ -347,6 +356,15 @@
     </wsdl:operation>
     <wsdl:operation name="Update_table">
       <soap:operation soapAction="http://tempuri.org/IService1/Update_table" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Add_table">
+      <soap:operation soapAction="http://tempuri.org/IService1/Add_table" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

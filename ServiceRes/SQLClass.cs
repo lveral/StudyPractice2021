@@ -96,28 +96,20 @@ namespace ServiceRes
         {
             return SQLClass.Request("SELECT role FROM visitors WHERE login = '" + login + "'")[0];
         }
-        public static DataTable Select_reservation(string dateFrom = "", string dateTo = "" )
+        public static List<string> Select_reservation(string dateFrom = "", string dateTo = "" )
         {
             if (dateFrom == "")
             {
                 string curDate = DateTime.Now.ToString("yyyy-MM-dd");
-                SQLClass.nda = new NpgsqlDataAdapter(@"select r.id, r.id_t as ""Номер стола"", r.date as ""Дата"", r.time as ""Время"",
-                    v.f_name as ""Фамилия"", v.m_name as ""Имя"", v.l_name as ""Отчество"", 
-                    v.phone as ""Номер телефона"", v.login as ""Почта"" from visitors v 
-                    inner join reservation r on v.id = r.id_v
-                    where date >= '" + curDate + "' order by date", SQLClass.con);
-                dt = new DataTable();
-                SQLClass.nda.Fill(dt);
-                return dt;
+                return SQLClass.Request(@"select r.id, r.id_t, r.date, r.time,v.f_name, v.m_name, v.l_name, 
+                    v.phone, v.login from visitors v 
+                    inner join reservation r on v.id = r.id_v 
+                    where date >= '" + curDate + "' order by date");
             }
-            SQLClass.nda = new NpgsqlDataAdapter(@"select r.id, r.id_t as ""Номер стола"", r.date as ""Дата"", r.time as ""Время"",
-                v.f_name as ""Фамилия"", v.m_name as ""Имя"", v.l_name as ""Отчество"", 
-                v.phone as ""Номер телефона"", v.login as ""Почта"" from visitors v 
-                inner join reservation r on v.id = r.id_v
-                where date between '" + dateFrom + "' and '" + dateTo + "' order by date", SQLClass.con);
-            dt = new DataTable();
-            SQLClass.nda.Fill(dt);
-            return dt;
+            return SQLClass.Request(@"select r.id, r.id_t, r.date, r.time,v.f_name, v.m_name, v.l_name, 
+                v.phone, v.login from visitors v 
+                inner join reservation r on v.id = r.id_v 
+                where date between '" + dateFrom + "' and '" + dateTo + "' order by date");
         }
         public static void Update_reservation(string id, string id_t, string date, string time)
         {
@@ -133,15 +125,9 @@ namespace ServiceRes
             SQLClass.Query("insert into reservation(id_v,id_t,date,time) values(" + id + "," + TableId +
             "," + "'" + Date + "'" + "," + "'" + Time + "')");
         }
-        public static DataTable Select_admins()
+        public static List<string> Select_admins()
         {
-            SQLClass.nda = new NpgsqlDataAdapter(@"select id, f_name as ""Фамилия"", m_name as ""Имя"", 
-                l_name as ""Отчество"", phone as ""Номер телефона"", login as ""Почта"" from visitors 
-                where role = 'администратор'
-                order by f_name", SQLClass.con);
-            dt = new DataTable();
-            SQLClass.nda.Fill(dt);
-            return dt;
+            return SQLClass.Request("select id, f_name, m_name, l_name, phone, login from visitors where role = 'администратор' order by f_name");
         }
         public static void Update_admin(string id)
         {
@@ -160,35 +146,19 @@ namespace ServiceRes
         }
         public static List<string> Select_tables()
         {
-            /*
-            SQLClass.nda = new NpgsqlDataAdapter(@"select id as ""Номер стола"", persons as ""Количество персон"" from tables", SQLClass.con);
-            dt = new DataTable();
-            SQLClass.nda.Fill(dt);*/
-
             return SQLClass.Request(@"select id, persons from tables");
         }
         public static void Delete_table(string id_t)
         {
             SQLClass.Query("Delete from tables where id = " + id_t);
         }
-        public static void Update_table(List<string> dtl)
+        public static void Update_table(string id, string persons)
         {
-            List<string> NameColumns = new List<string>();
-            NameColumns.Add("Номер стола");
-            NameColumns.Add("Количество персон");
-
-            List<string> list = dtl.ToList<string>();
-            List<string[]> list2 = new List<string[]>();
-            for (int i = 0; i < list.Count; i += 2)
-            {
-                list2.Add(new string[] { list[i], list[i + 1] });
-            }
-            dt = ToDataTable(list2, NameColumns);
-
-            SQLClass.nda = new NpgsqlDataAdapter(@"select id as ""Номер стола"", persons as ""Количество персон"" from tables", SQLClass.con);
-
-            ncb = new NpgsqlCommandBuilder(nda);
-            nda.Update(dt);
+            SQLClass.Query("update tables set persons = '" + persons + "' where id = " + id);
+        }
+        public static void Add_table(string id, string persons)
+        {
+            SQLClass.Query("insert into tables(id, persons) values ('" + id + "', '"+ persons + "')");
         }
         public static DataTable ToDataTable(List<string[]> list, List<string> NameColums)
         {

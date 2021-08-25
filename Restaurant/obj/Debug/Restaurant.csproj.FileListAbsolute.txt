@@ -78,3 +78,6 @@ C:\Users\ureki\Documents\GitHub\Restaurant\Restaurant\obj\Debug\Restaurant.cspro
 C:\Users\ureki\Documents\GitHub\Restaurant\Restaurant\obj\Debug\Restaurant.csproj.CopyComplete
 C:\Users\ureki\Documents\GitHub\Restaurant\Restaurant\obj\Debug\Restaurant.exe
 C:\Users\ureki\Documents\GitHub\Restaurant\Restaurant\obj\Debug\Restaurant.pdb
+C:\Users\ureki\Documents\GitHub\Restaurant\Restaurant\obj\Debug\Restaurant.UpdateTablesForm.resources
+C:\Users\ureki\Documents\GitHub\Restaurant\Restaurant\obj\Debug\Restaurant.AddTablesForm.resources
+C:\Users\ureki\Documents\GitHub\Restaurant\Restaurant\obj\Debug\Restaurant.UpdateReservationForm.resources

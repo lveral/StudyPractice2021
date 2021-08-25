@@ -88,6 +88,12 @@
     <Compile Include="AccountForm.Designer.cs">
       <DependentUpon>AccountForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="AddTablesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddTablesForm.Designer.cs">
+      <DependentUpon>AddTablesForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="AdminForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -137,8 +143,23 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UpdateReservationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UpdateReservationForm.Designer.cs">
+      <DependentUpon>UpdateReservationForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateTablesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UpdateTablesForm.Designer.cs">
+      <DependentUpon>UpdateTablesForm.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="AccountForm.resx">
       <DependentUpon>AccountForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddTablesForm.resx">
+      <DependentUpon>AddTablesForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AdminForm.resx">
       <DependentUpon>AdminForm.cs</DependentUpon>
@@ -170,6 +191,12 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="UpdateReservationForm.resx">
+      <DependentUpon>UpdateReservationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UpdateTablesForm.resx">
+      <DependentUpon>UpdateTablesForm.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Connected Services\ServiceReference\Service1.wsdl" />
     <None Include="Connected Services\ServiceReference\Service1.xsd">
       <SubType>Designer</SubType>
@@ -178,9 +205,6 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="Connected Services\ServiceReference\Service12.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Connected Services\ServiceReference\Service13.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="packages.config" />
