@@ -19,15 +19,27 @@ namespace Restaurant
 
         private void saveButton_Click(object sender, EventArgs e)
         {
-            if (idBox.Text == "" | personsBox.Text == "")
+            if (numberBox.Text == "" | personsBox.Text == "")
             {
                 MessageBox.Show("Заполните все поля");
                 return;
             }
+            string check = Program.client.Exist_Table(numberBox.Text);
+            if (check != "0")
+            {
+                MessageBox.Show("Стол с таким номером уже существует");
+                return;
+            }
             else
             {
-                Program.client.Add_table(idBox.Text, personsBox.Text);
+                Program.client.Add_table(numberBox.Text, personsBox.Text);
+                Close();
             }
+        }
+
+        private void AddTablesForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

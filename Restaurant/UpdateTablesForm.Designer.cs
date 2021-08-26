@@ -30,12 +30,12 @@ namespace Restaurant
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.personsBox = new System.Windows.Forms.TextBox();
-            this.idBox = new System.Windows.Forms.TextBox();
+            this.numberBox = new System.Windows.Forms.TextBox();
             this.saveButton = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -51,21 +51,9 @@ namespace Restaurant
             this.panel1.Size = new System.Drawing.Size(503, 118);
             this.panel1.TabIndex = 0;
             // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.label4);
-            this.panel2.Controls.Add(this.label3);
-            this.panel2.Controls.Add(this.personsBox);
-            this.panel2.Controls.Add(this.idBox);
-            this.panel2.Controls.Add(this.saveButton);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(0, 118);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(503, 297);
-            this.panel2.TabIndex = 0;
-            // 
             // label1
             // 
+            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(21)))), ((int)(((byte)(97)))));
             this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -78,6 +66,19 @@ namespace Restaurant
             this.label1.TabIndex = 15;
             this.label1.Text = "Редактор данных";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.label4);
+            this.panel2.Controls.Add(this.label3);
+            this.panel2.Controls.Add(this.personsBox);
+            this.panel2.Controls.Add(this.numberBox);
+            this.panel2.Controls.Add(this.saveButton);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Location = new System.Drawing.Point(0, 118);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(503, 297);
+            this.panel2.TabIndex = 0;
             // 
             // label4
             // 
@@ -109,18 +110,18 @@ namespace Restaurant
             this.personsBox.Size = new System.Drawing.Size(227, 22);
             this.personsBox.TabIndex = 15;
             // 
-            // idBox
+            // numberBox
             // 
-            this.idBox.Location = new System.Drawing.Point(211, 50);
-            this.idBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.idBox.Name = "idBox";
-            this.idBox.Size = new System.Drawing.Size(227, 22);
-            this.idBox.TabIndex = 14;
-            this.idBox.TextChanged += new System.EventHandler(this.LoginBox_TextChanged);
+            this.numberBox.Location = new System.Drawing.Point(211, 50);
+            this.numberBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.numberBox.Name = "numberBox";
+            this.numberBox.Size = new System.Drawing.Size(227, 22);
+            this.numberBox.TabIndex = 14;
+            this.numberBox.TextChanged += new System.EventHandler(this.LoginBox_TextChanged);
             // 
             // saveButton
             // 
-            this.saveButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(53)))), ((int)(((byte)(44)))));
+            this.saveButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(21)))), ((int)(((byte)(97)))));
             this.saveButton.FlatAppearance.BorderSize = 0;
             this.saveButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.saveButton.ForeColor = System.Drawing.SystemColors.Control;
@@ -158,7 +159,7 @@ namespace Restaurant
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox personsBox;
-        private System.Windows.Forms.TextBox idBox;
+        private System.Windows.Forms.TextBox numberBox;
         private System.Windows.Forms.Button saveButton;
     }
 }

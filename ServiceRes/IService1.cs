@@ -15,12 +15,17 @@ namespace ServiceRes
     {
         [OperationContract]
         string Select_ID(string login);
+        [OperationContract]
+        string Select_ID_table(string number);
 
         [OperationContract]
         string Select_Role(string login);
 
         [OperationContract]
         string Exist_User(string login);
+
+        [OperationContract]
+        string Exist_Table(string number);
 
         [OperationContract]
         string Exist_UserWithPass(string login, string password);
@@ -59,13 +64,18 @@ namespace ServiceRes
         List<string> Select_free_tables(string date,int time);
 
         [OperationContract]
+        string Select_reserved_tables(string id_t, string date, int time);
+        [OperationContract]
         List<string> Select_tables();
+
+        [OperationContract]
+        List<string> Select_number_tables();
 
         [OperationContract]
         void Delete_table(string id);
 
         [OperationContract]
-        void Update_table(string id, string persons);
+        void Update_table(string id, string persons, string number);
 
 
         [OperationContract]

@@ -59,7 +59,7 @@ namespace Restaurant
             this.panel1.Controls.Add(this.buttonDelete);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1067, 164);
             this.panel1.TabIndex = 3;
@@ -67,12 +67,12 @@ namespace Restaurant
             // 
             // button1
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(53)))), ((int)(((byte)(44)))));
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(21)))), ((int)(((byte)(97)))));
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.ForeColor = System.Drawing.SystemColors.Control;
             this.button1.Location = new System.Drawing.Point(555, 95);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(163, 62);
             this.button1.TabIndex = 61;
@@ -112,12 +112,12 @@ namespace Restaurant
             // 
             // buttonShow
             // 
-            this.buttonShow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(53)))), ((int)(((byte)(44)))));
+            this.buttonShow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(21)))), ((int)(((byte)(97)))));
             this.buttonShow.FlatAppearance.BorderSize = 0;
             this.buttonShow.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonShow.ForeColor = System.Drawing.SystemColors.Control;
             this.buttonShow.Location = new System.Drawing.Point(896, 14);
-            this.buttonShow.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonShow.Margin = new System.Windows.Forms.Padding(4);
             this.buttonShow.Name = "buttonShow";
             this.buttonShow.Size = new System.Drawing.Size(163, 62);
             this.buttonShow.TabIndex = 57;
@@ -145,12 +145,12 @@ namespace Restaurant
             // 
             // buttonSave
             // 
-            this.buttonSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(53)))), ((int)(((byte)(44)))));
+            this.buttonSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(21)))), ((int)(((byte)(97)))));
             this.buttonSave.FlatAppearance.BorderSize = 0;
             this.buttonSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonSave.ForeColor = System.Drawing.SystemColors.Control;
             this.buttonSave.Location = new System.Drawing.Point(725, 95);
-            this.buttonSave.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonSave.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSave.Name = "buttonSave";
             this.buttonSave.Size = new System.Drawing.Size(163, 62);
             this.buttonSave.TabIndex = 54;
@@ -160,12 +160,12 @@ namespace Restaurant
             // 
             // buttonDelete
             // 
-            this.buttonDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(53)))), ((int)(((byte)(44)))));
+            this.buttonDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(21)))), ((int)(((byte)(97)))));
             this.buttonDelete.FlatAppearance.BorderSize = 0;
             this.buttonDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonDelete.ForeColor = System.Drawing.SystemColors.Control;
             this.buttonDelete.Location = new System.Drawing.Point(896, 95);
-            this.buttonDelete.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonDelete.Margin = new System.Windows.Forms.Padding(4);
             this.buttonDelete.Name = "buttonDelete";
             this.buttonDelete.Size = new System.Drawing.Size(163, 62);
             this.buttonDelete.TabIndex = 53;
@@ -188,7 +188,7 @@ namespace Restaurant
             this.dataGridTables.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridTables.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridTables.Location = new System.Drawing.Point(0, 164);
-            this.dataGridTables.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridTables.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridTables.MultiSelect = false;
             this.dataGridTables.Name = "dataGridTables";
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -210,7 +210,7 @@ namespace Restaurant
             this.ClientSize = new System.Drawing.Size(1067, 554);
             this.Controls.Add(this.dataGridTables);
             this.Controls.Add(this.panel1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "ReservationAllForm";
             this.Text = "ReservationAllForm";
             this.Load += new System.EventHandler(this.ReservationAllForm_Load);

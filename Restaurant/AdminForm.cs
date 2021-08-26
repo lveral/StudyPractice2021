@@ -25,7 +25,7 @@ namespace Restaurant
                 if (currentButton != (Button)btnSender)
                 {
                     DisableButton();
-                    Color color = Color.FromArgb(143, 89, 63);
+                    Color color = Color.FromArgb(18, 34, 161);
                     currentButton = (Button)btnSender;
                     currentButton.BackColor = color;
                     currentButton.ForeColor = Color.White;
@@ -39,7 +39,7 @@ namespace Restaurant
             {
                 if (previousBtn.GetType() == typeof(Button))
                 {
-                    previousBtn.BackColor = Color.FromArgb(93, 53, 44);
+                    previousBtn.BackColor = Color.FromArgb(11, 21, 97);
                     previousBtn.ForeColor = Color.Gainsboro;
                     previousBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
                 }

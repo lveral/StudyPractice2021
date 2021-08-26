@@ -17,6 +17,10 @@ namespace ServiceRes
         {
             return SQLClass.Select_ID(login);
         }
+        public string Select_ID_table(string number)
+        {
+            return SQLClass.Select_ID_table(number);
+        }
         public string Select_Role(string login)
         {
             return SQLClass.Select_Role(login);
@@ -86,10 +90,19 @@ namespace ServiceRes
         {
             return SQLClass.Select_free_tables(date, time);
         }
+        public string Select_reserved_tables(string id_t, string date, int time)
+        {
+            return SQLClass.Select_reserved_tables(id_t, date, time);
+        }
 
         public List<string> Select_tables()
         {
             return SQLClass.Select_tables();
+        }
+
+        public List<string> Select_number_tables()
+        {
+            return SQLClass.Select_number_tables();
         }
 
         public void Delete_table(string id)
@@ -97,14 +110,19 @@ namespace ServiceRes
             SQLClass.Delete_table(id); 
         }
 
-        public void Update_table(string id, string persons)
+        public void Update_table(string id, string persons, string number)
         {
-            SQLClass.Update_table(id, persons);
+            SQLClass.Update_table(id, persons, number);
         }
 
         public void Add_table(string id, string persons)
         {
             SQLClass.Add_table(id, persons);
+        }
+
+        public string Exist_Table(string number)
+        {
+            return SQLClass.Exist_Table(number);
         }
     }
 }

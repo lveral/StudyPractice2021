@@ -13,11 +13,13 @@ namespace Restaurant
     public partial class UpdateTablesForm : Form
     {
         static string Id;
-        public UpdateTablesForm(string id, string persons)
+        static string Number;
+        public UpdateTablesForm(string id, string number, string persons)
         {
             Id = id;
+            Number = number;
             InitializeComponent();
-            idBox.Text = id;
+            numberBox.Text = number;
             personsBox.Text = persons;
             
         }
@@ -34,7 +36,14 @@ namespace Restaurant
 
         private void saveButton_Click(object sender, EventArgs e)
         {
-            Program.client.Update_table(Id, personsBox.Text);
+            string check = Program.client.Exist_Table(numberBox.Text);
+            if (check != "0" & Number != numberBox.Text)
+            {
+                MessageBox.Show("Стол с таким номером уже существует");
+                return;
+            }
+            Program.client.Update_table(Id, personsBox.Text, numberBox.Text);
+            Close();
         }
     }
 }

@@ -21,6 +21,12 @@ namespace Restaurant.ServiceReference {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/Select_ID", ReplyAction="http://tempuri.org/IService1/Select_IDResponse")]
         System.Threading.Tasks.Task<string> Select_IDAsync(string login);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/Select_ID_table", ReplyAction="http://tempuri.org/IService1/Select_ID_tableResponse")]
+        string Select_ID_table(string number);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/Select_ID_table", ReplyAction="http://tempuri.org/IService1/Select_ID_tableResponse")]
+        System.Threading.Tasks.Task<string> Select_ID_tableAsync(string number);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/Select_Role", ReplyAction="http://tempuri.org/IService1/Select_RoleResponse")]
         string Select_Role(string login);
         
@@ -32,6 +38,12 @@ namespace Restaurant.ServiceReference {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/Exist_User", ReplyAction="http://tempuri.org/IService1/Exist_UserResponse")]
         System.Threading.Tasks.Task<string> Exist_UserAsync(string login);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/Exist_Table", ReplyAction="http://tempuri.org/IService1/Exist_TableResponse")]
+        string Exist_Table(string number);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/Exist_Table", ReplyAction="http://tempuri.org/IService1/Exist_TableResponse")]
+        System.Threading.Tasks.Task<string> Exist_TableAsync(string number);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/Exist_UserWithPass", ReplyAction="http://tempuri.org/IService1/Exist_UserWithPassResponse")]
         string Exist_UserWithPass(string login, string password);
@@ -105,11 +117,23 @@ namespace Restaurant.ServiceReference {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/Select_free_tables", ReplyAction="http://tempuri.org/IService1/Select_free_tablesResponse")]
         System.Threading.Tasks.Task<string[]> Select_free_tablesAsync(string date, int time);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/Select_reserved_tables", ReplyAction="http://tempuri.org/IService1/Select_reserved_tablesResponse")]
+        string Select_reserved_tables(string id_t, string date, int time);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/Select_reserved_tables", ReplyAction="http://tempuri.org/IService1/Select_reserved_tablesResponse")]
+        System.Threading.Tasks.Task<string> Select_reserved_tablesAsync(string id_t, string date, int time);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/Select_tables", ReplyAction="http://tempuri.org/IService1/Select_tablesResponse")]
         string[] Select_tables();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/Select_tables", ReplyAction="http://tempuri.org/IService1/Select_tablesResponse")]
         System.Threading.Tasks.Task<string[]> Select_tablesAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/Select_number_tables", ReplyAction="http://tempuri.org/IService1/Select_number_tablesResponse")]
+        string[] Select_number_tables();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/Select_number_tables", ReplyAction="http://tempuri.org/IService1/Select_number_tablesResponse")]
+        System.Threading.Tasks.Task<string[]> Select_number_tablesAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/Delete_table", ReplyAction="http://tempuri.org/IService1/Delete_tableResponse")]
         void Delete_table(string id);
@@ -118,10 +142,10 @@ namespace Restaurant.ServiceReference {
         System.Threading.Tasks.Task Delete_tableAsync(string id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/Update_table", ReplyAction="http://tempuri.org/IService1/Update_tableResponse")]
-        void Update_table(string id, string persons);
+        void Update_table(string id, string persons, string number);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/Update_table", ReplyAction="http://tempuri.org/IService1/Update_tableResponse")]
-        System.Threading.Tasks.Task Update_tableAsync(string id, string persons);
+        System.Threading.Tasks.Task Update_tableAsync(string id, string persons, string number);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/Add_table", ReplyAction="http://tempuri.org/IService1/Add_tableResponse")]
         void Add_table(string id, string persons);
@@ -165,6 +189,14 @@ namespace Restaurant.ServiceReference {
             return base.Channel.Select_IDAsync(login);
         }
         
+        public string Select_ID_table(string number) {
+            return base.Channel.Select_ID_table(number);
+        }
+        
+        public System.Threading.Tasks.Task<string> Select_ID_tableAsync(string number) {
+            return base.Channel.Select_ID_tableAsync(number);
+        }
+        
         public string Select_Role(string login) {
             return base.Channel.Select_Role(login);
         }
@@ -179,6 +211,14 @@ namespace Restaurant.ServiceReference {
         
         public System.Threading.Tasks.Task<string> Exist_UserAsync(string login) {
             return base.Channel.Exist_UserAsync(login);
+        }
+        
+        public string Exist_Table(string number) {
+            return base.Channel.Exist_Table(number);
+        }
+        
+        public System.Threading.Tasks.Task<string> Exist_TableAsync(string number) {
+            return base.Channel.Exist_TableAsync(number);
         }
         
         public string Exist_UserWithPass(string login, string password) {
@@ -277,12 +317,28 @@ namespace Restaurant.ServiceReference {
             return base.Channel.Select_free_tablesAsync(date, time);
         }
         
+        public string Select_reserved_tables(string id_t, string date, int time) {
+            return base.Channel.Select_reserved_tables(id_t, date, time);
+        }
+        
+        public System.Threading.Tasks.Task<string> Select_reserved_tablesAsync(string id_t, string date, int time) {
+            return base.Channel.Select_reserved_tablesAsync(id_t, date, time);
+        }
+        
         public string[] Select_tables() {
             return base.Channel.Select_tables();
         }
         
         public System.Threading.Tasks.Task<string[]> Select_tablesAsync() {
             return base.Channel.Select_tablesAsync();
+        }
+        
+        public string[] Select_number_tables() {
+            return base.Channel.Select_number_tables();
+        }
+        
+        public System.Threading.Tasks.Task<string[]> Select_number_tablesAsync() {
+            return base.Channel.Select_number_tablesAsync();
         }
         
         public void Delete_table(string id) {
@@ -293,12 +349,12 @@ namespace Restaurant.ServiceReference {
             return base.Channel.Delete_tableAsync(id);
         }
         
-        public void Update_table(string id, string persons) {
-            base.Channel.Update_table(id, persons);
+        public void Update_table(string id, string persons, string number) {
+            base.Channel.Update_table(id, persons, number);
         }
         
-        public System.Threading.Tasks.Task Update_tableAsync(string id, string persons) {
-            return base.Channel.Update_tableAsync(id, persons);
+        public System.Threading.Tasks.Task Update_tableAsync(string id, string persons, string number) {
+            return base.Channel.Update_tableAsync(id, persons, number);
         }
         
         public void Add_table(string id, string persons) {

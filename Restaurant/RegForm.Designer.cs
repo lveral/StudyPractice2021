@@ -61,18 +61,21 @@ namespace Restaurant
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(752, 100);
+            this.panel1.Size = new System.Drawing.Size(1003, 123);
             this.panel1.TabIndex = 0;
             // 
             // label1
             // 
+            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(21)))), ((int)(((byte)(97)))));
             this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label1.ForeColor = System.Drawing.SystemColors.Control;
             this.label1.Location = new System.Drawing.Point(0, 0);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(752, 100);
+            this.label1.Size = new System.Drawing.Size(1003, 123);
             this.label1.TabIndex = 0;
             this.label1.Text = "Регистрация";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -100,20 +103,22 @@ namespace Restaurant
             this.panel2.Controls.Add(this.textBoxPassword);
             this.panel2.Controls.Add(this.textBoxLogin);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(0, 100);
+            this.panel2.Location = new System.Drawing.Point(0, 123);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(752, 353);
+            this.panel2.Size = new System.Drawing.Size(1003, 435);
             this.panel2.TabIndex = 1;
             // 
             // buttonBack
             // 
-            this.buttonBack.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(53)))), ((int)(((byte)(44)))));
+            this.buttonBack.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(21)))), ((int)(((byte)(97)))));
             this.buttonBack.FlatAppearance.BorderSize = 0;
             this.buttonBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonBack.ForeColor = System.Drawing.SystemColors.Control;
-            this.buttonBack.Location = new System.Drawing.Point(425, 295);
+            this.buttonBack.Location = new System.Drawing.Point(567, 363);
+            this.buttonBack.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonBack.Name = "buttonBack";
-            this.buttonBack.Size = new System.Drawing.Size(122, 43);
+            this.buttonBack.Size = new System.Drawing.Size(163, 53);
             this.buttonBack.TabIndex = 32;
             this.buttonBack.Text = "Назад";
             this.buttonBack.UseVisualStyleBackColor = false;
@@ -124,19 +129,18 @@ namespace Restaurant
             this.label10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label10.ForeColor = System.Drawing.SystemColors.Control;
-            this.label10.Location = new System.Drawing.Point(360, 160);
-            this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label10.Location = new System.Drawing.Point(480, 197);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(300, 25);
+            this.label10.Size = new System.Drawing.Size(400, 31);
             this.label10.TabIndex = 31;
             this.label10.Text = "Только для администраторов";
             // 
             // textBoxPassword2
             // 
-            this.textBoxPassword2.Location = new System.Drawing.Point(470, 90);
-            this.textBoxPassword2.Margin = new System.Windows.Forms.Padding(2);
+            this.textBoxPassword2.Location = new System.Drawing.Point(627, 111);
+            this.textBoxPassword2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxPassword2.Name = "textBoxPassword2";
-            this.textBoxPassword2.Size = new System.Drawing.Size(171, 20);
+            this.textBoxPassword2.Size = new System.Drawing.Size(227, 22);
             this.textBoxPassword2.TabIndex = 30;
             this.textBoxPassword2.UseSystemPasswordChar = true;
             // 
@@ -144,10 +148,9 @@ namespace Restaurant
             // 
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label9.ForeColor = System.Drawing.SystemColors.Control;
-            this.label9.Location = new System.Drawing.Point(360, 79);
-            this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label9.Location = new System.Drawing.Point(480, 97);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(106, 44);
+            this.label9.Size = new System.Drawing.Size(141, 54);
             this.label9.TabIndex = 29;
             this.label9.Text = "Повторите пароль";
             // 
@@ -155,31 +158,31 @@ namespace Restaurant
             // 
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label8.ForeColor = System.Drawing.SystemColors.Control;
-            this.label8.Location = new System.Drawing.Point(360, 190);
-            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label8.Location = new System.Drawing.Point(480, 234);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(153, 45);
+            this.label8.Size = new System.Drawing.Size(204, 55);
             this.label8.TabIndex = 27;
             this.label8.Text = "Пароль администратора";
             // 
             // textBoxPassAdmin
             // 
-            this.textBoxPassAdmin.Location = new System.Drawing.Point(517, 203);
-            this.textBoxPassAdmin.Margin = new System.Windows.Forms.Padding(2);
+            this.textBoxPassAdmin.Location = new System.Drawing.Point(689, 250);
+            this.textBoxPassAdmin.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxPassAdmin.Name = "textBoxPassAdmin";
-            this.textBoxPassAdmin.Size = new System.Drawing.Size(171, 20);
+            this.textBoxPassAdmin.Size = new System.Drawing.Size(227, 22);
             this.textBoxPassAdmin.TabIndex = 26;
             this.textBoxPassAdmin.UseSystemPasswordChar = true;
             // 
             // buttonOK
             // 
-            this.buttonOK.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(53)))), ((int)(((byte)(44)))));
+            this.buttonOK.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(21)))), ((int)(((byte)(97)))));
             this.buttonOK.FlatAppearance.BorderSize = 0;
             this.buttonOK.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonOK.ForeColor = System.Drawing.SystemColors.Control;
-            this.buttonOK.Location = new System.Drawing.Point(229, 295);
+            this.buttonOK.Location = new System.Drawing.Point(305, 363);
+            this.buttonOK.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonOK.Name = "buttonOK";
-            this.buttonOK.Size = new System.Drawing.Size(122, 43);
+            this.buttonOK.Size = new System.Drawing.Size(163, 53);
             this.buttonOK.TabIndex = 25;
             this.buttonOK.Text = "ОК";
             this.buttonOK.UseVisualStyleBackColor = false;
@@ -190,8 +193,7 @@ namespace Restaurant
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label6.ForeColor = System.Drawing.SystemColors.Control;
-            this.label6.Location = new System.Drawing.Point(50, 90);
-            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label6.Location = new System.Drawing.Point(67, 111);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(42, 20);
             this.label6.TabIndex = 24;
@@ -202,8 +204,7 @@ namespace Restaurant
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label7.ForeColor = System.Drawing.SystemColors.Control;
-            this.label7.Location = new System.Drawing.Point(50, 40);
-            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label7.Location = new System.Drawing.Point(67, 49);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(87, 20);
             this.label7.TabIndex = 23;
@@ -211,18 +212,18 @@ namespace Restaurant
             // 
             // textBoxMiddleN
             // 
-            this.textBoxMiddleN.Location = new System.Drawing.Point(145, 90);
-            this.textBoxMiddleN.Margin = new System.Windows.Forms.Padding(2);
+            this.textBoxMiddleN.Location = new System.Drawing.Point(193, 111);
+            this.textBoxMiddleN.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxMiddleN.Name = "textBoxMiddleN";
-            this.textBoxMiddleN.Size = new System.Drawing.Size(171, 20);
+            this.textBoxMiddleN.Size = new System.Drawing.Size(227, 22);
             this.textBoxMiddleN.TabIndex = 22;
             // 
             // textBoxFirstN
             // 
-            this.textBoxFirstN.Location = new System.Drawing.Point(145, 40);
-            this.textBoxFirstN.Margin = new System.Windows.Forms.Padding(2);
+            this.textBoxFirstN.Location = new System.Drawing.Point(193, 49);
+            this.textBoxFirstN.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxFirstN.Name = "textBoxFirstN";
-            this.textBoxFirstN.Size = new System.Drawing.Size(171, 20);
+            this.textBoxFirstN.Size = new System.Drawing.Size(227, 22);
             this.textBoxFirstN.TabIndex = 21;
             // 
             // label2
@@ -230,8 +231,7 @@ namespace Restaurant
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label2.ForeColor = System.Drawing.SystemColors.Control;
-            this.label2.Location = new System.Drawing.Point(50, 190);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Location = new System.Drawing.Point(67, 234);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(85, 20);
             this.label2.TabIndex = 20;
@@ -242,8 +242,7 @@ namespace Restaurant
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label5.ForeColor = System.Drawing.SystemColors.Control;
-            this.label5.Location = new System.Drawing.Point(50, 140);
-            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label5.Location = new System.Drawing.Point(67, 172);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(91, 20);
             this.label5.TabIndex = 19;
@@ -251,18 +250,18 @@ namespace Restaurant
             // 
             // textBoxPhone
             // 
-            this.textBoxPhone.Location = new System.Drawing.Point(145, 190);
-            this.textBoxPhone.Margin = new System.Windows.Forms.Padding(2);
+            this.textBoxPhone.Location = new System.Drawing.Point(193, 234);
+            this.textBoxPhone.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxPhone.Name = "textBoxPhone";
-            this.textBoxPhone.Size = new System.Drawing.Size(171, 20);
+            this.textBoxPhone.Size = new System.Drawing.Size(227, 22);
             this.textBoxPhone.TabIndex = 18;
             // 
             // textBoxLastN
             // 
-            this.textBoxLastN.Location = new System.Drawing.Point(145, 140);
-            this.textBoxLastN.Margin = new System.Windows.Forms.Padding(2);
+            this.textBoxLastN.Location = new System.Drawing.Point(193, 172);
+            this.textBoxLastN.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxLastN.Name = "textBoxLastN";
-            this.textBoxLastN.Size = new System.Drawing.Size(171, 20);
+            this.textBoxLastN.Size = new System.Drawing.Size(227, 22);
             this.textBoxLastN.TabIndex = 17;
             // 
             // label4
@@ -270,8 +269,7 @@ namespace Restaurant
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label4.ForeColor = System.Drawing.SystemColors.Control;
-            this.label4.Location = new System.Drawing.Point(360, 40);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label4.Location = new System.Drawing.Point(480, 49);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(72, 20);
             this.label4.TabIndex = 16;
@@ -282,8 +280,7 @@ namespace Restaurant
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label3.ForeColor = System.Drawing.SystemColors.Control;
-            this.label3.Location = new System.Drawing.Point(50, 240);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Location = new System.Drawing.Point(67, 295);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(59, 20);
             this.label3.TabIndex = 15;
@@ -291,29 +288,30 @@ namespace Restaurant
             // 
             // textBoxPassword
             // 
-            this.textBoxPassword.Location = new System.Drawing.Point(470, 40);
-            this.textBoxPassword.Margin = new System.Windows.Forms.Padding(2);
+            this.textBoxPassword.Location = new System.Drawing.Point(627, 49);
+            this.textBoxPassword.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxPassword.Name = "textBoxPassword";
-            this.textBoxPassword.Size = new System.Drawing.Size(171, 20);
+            this.textBoxPassword.Size = new System.Drawing.Size(227, 22);
             this.textBoxPassword.TabIndex = 14;
             this.textBoxPassword.UseSystemPasswordChar = true;
             // 
             // textBoxLogin
             // 
-            this.textBoxLogin.Location = new System.Drawing.Point(145, 240);
-            this.textBoxLogin.Margin = new System.Windows.Forms.Padding(2);
+            this.textBoxLogin.Location = new System.Drawing.Point(193, 295);
+            this.textBoxLogin.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxLogin.Name = "textBoxLogin";
-            this.textBoxLogin.Size = new System.Drawing.Size(171, 20);
+            this.textBoxLogin.Size = new System.Drawing.Size(227, 22);
             this.textBoxLogin.TabIndex = 13;
             // 
             // RegForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(752, 453);
+            this.ClientSize = new System.Drawing.Size(1003, 558);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.MinimumSize = new System.Drawing.Size(770, 500);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.MinimumSize = new System.Drawing.Size(1021, 605);
             this.Name = "RegForm";
             this.Text = "RegForm";
             this.Load += new System.EventHandler(this.RegForm_Load);
